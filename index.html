@@ -1,0 +1,3054 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+
+    <title>LIN-digital | Solusi Digital Modern</title>
+
+    <!-- PREMIUM FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           ROOT / COLOR SYSTEM
+        ====================================================== */
+
+        :root {
+            --black: #050505;
+            --black-soft: #0a0a0a;
+            --surface: #101010;
+            --surface-2: #151515;
+
+            --white: #ffffff;
+            --white-soft: #e8e8e8;
+
+            --muted: #8f8f8f;
+            --muted-light: #b5b5b5;
+
+            --blue: #4f8cff;
+            --blue-soft: rgba(79,140,255,.10);
+
+            --maroon: #b52b52;
+            --maroon-light: #d94b72;
+            --maroon-soft: rgba(181,43,82,.11);
+
+            --line: rgba(255,255,255,.09);
+
+            --success: #32d583;
+
+            --radius: 20px;
+
+            --shadow:
+                0 25px 80px rgba(0,0,0,.45);
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--white);
+            background:
+                radial-gradient(
+                    circle at 80% -10%,
+                    rgba(181,43,82,.12),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(79,140,255,.06),
+                    transparent 25%
+                ),
+                var(--black);
+
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        nav {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 1000;
+
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+
+            background: rgba(5,5,5,.78);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--line);
+        }
+
+
+        .nav-inner {
+            width: min(1120px, calc(100% - 40px));
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .nav-brand {
+            text-decoration: none;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 1.2rem;
+            font-weight: 800;
+
+            letter-spacing: -.05em;
+        }
+
+
+        .nav-brand span {
+            color: var(--maroon-light);
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+            color: var(--muted);
+
+            text-decoration: none;
+
+            font-size: .88rem;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        .nav-cta {
+            color: white !important;
+
+            padding: 9px 17px;
+
+            background: var(--maroon);
+
+            border-radius: 10px;
+        }
+
+
+        .nav-cta:hover {
+            background: var(--maroon-light);
+        }
+
+
+        .menu-toggle {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid var(--line);
+            border-radius: 11px;
+
+            background: var(--surface);
+
+            color: white;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        header {
+            min-height: 720px;
+
+            display: grid;
+            place-items: center;
+
+            padding: 130px 20px 80px;
+        }
+
+
+        .hero-layout {
+            width: min(1120px, 100%);
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+
+        .hero-copy {
+            text-align: left;
+
+            animation: fadeUp .8s ease both;
+        }
+
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 9px;
+
+            padding: 7px 13px;
+
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(181,43,82,.25);
+
+            border-radius: 999px;
+
+            background: var(--maroon-soft);
+
+            color: var(--maroon-light);
+
+            font-size: .75rem;
+
+            font-weight: 700;
+        }
+
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--maroon-light);
+
+            box-shadow:
+                0 0 0 5px rgba(217,75,114,.08);
+        }
+
+
+        header h1 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(
+                3rem,
+                7vw,
+                5.4rem
+            );
+
+            line-height: .98;
+
+            letter-spacing: -.075em;
+
+            font-weight: 800;
+
+            margin-bottom: 24px;
+        }
+
+
+        .accent {
+            color: var(--maroon-light);
+        }
+
+
+        header p {
+            max-width: 600px;
+
+            color: var(--muted);
+
+            font-size: clamp(
+                .98rem,
+                2vw,
+                1.08rem
+            );
+
+            line-height: 1.75;
+        }
+
+
+        .hero-actions {
+            display: flex;
+
+            gap: 11px;
+
+            margin-top: 30px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .hero-button {
+            min-height: 46px;
+
+            padding: 0 19px;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            border-radius: 11px;
+
+            text-decoration: none;
+
+            font-size: .85rem;
+
+            font-weight: 700;
+
+            transition: .25s ease;
+        }
+
+
+        .hero-button.primary {
+            color: white;
+
+            background: var(--maroon);
+
+            box-shadow:
+                0 12px 30px rgba(181,43,82,.22);
+        }
+
+
+        .hero-button.secondary {
+            color: white;
+
+            border: 1px solid var(--line);
+
+            background: rgba(255,255,255,.03);
+        }
+
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+        }
+
+
+        .hero-button.primary:hover {
+            background: var(--maroon-light);
+        }
+
+
+        /* =====================================================
+           HERO VISUAL
+        ====================================================== */
+
+        .hero-visual {
+            position: relative;
+
+            min-height: 460px;
+
+            display: grid;
+            place-items: center;
+
+            isolation: isolate;
+        }
+
+
+        .hero-glow {
+            position: absolute;
+
+            width: 360px;
+            height: 360px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(181,43,82,.22),
+                    rgba(79,140,255,.07) 50%,
+                    transparent 72%
+                );
+
+            filter: blur(4px);
+
+            animation: pulseGlow 5s ease-in-out infinite;
+
+            z-index: -2;
+        }
+
+
+        .hero-orbit {
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            border: 1px solid rgba(255,255,255,.07);
+
+            border-radius: 50%;
+
+            animation: rotateOrbit 20s linear infinite;
+        }
+
+
+        .hero-orbit::before,
+        .hero-orbit::after {
+            content: "";
+
+            position: absolute;
+
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+
+            box-shadow:
+                0 0 0 7px rgba(79,140,255,.08);
+        }
+
+
+        .hero-orbit::before {
+            top: 25px;
+            left: 70px;
+        }
+
+
+        .hero-orbit::after {
+            right: 35px;
+            bottom: 70px;
+
+            background: var(--maroon-light);
+
+            box-shadow:
+                0 0 0 7px rgba(217,75,114,.08);
+        }
+
+
+        /* =====================================================
+           BROWSER
+        ====================================================== */
+
+        .browser-card {
+            position: relative;
+
+            width: min(450px, 90%);
+
+            overflow: hidden;
+
+            border:
+                1px solid rgba(255,255,255,.12);
+
+            border-radius: 21px;
+
+            background:
+                rgba(15,15,15,.86);
+
+            box-shadow:
+                0 35px 90px rgba(0,0,0,.55);
+
+            backdrop-filter: blur(20px);
+
+            transform:
+                perspective(1100px)
+                rotateY(-6deg)
+                rotateX(2deg);
+
+            animation:
+                browserFloat 6s ease-in-out infinite;
+        }
+
+
+        .browser-top {
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 0 15px;
+
+            background: #111;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #444;
+        }
+
+
+        .browser-address {
+            flex: 1;
+
+            height: 21px;
+
+            margin-left: 8px;
+
+            border-radius: 7px;
+
+            background: #1c1c1c;
+
+            border: 1px solid rgba(255,255,255,.05);
+        }
+
+
+        .browser-body {
+            padding: 26px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #10131a,
+                    #0b0b0b 60%,
+                    #150b0f
+                );
+        }
+
+
+        .mini-nav {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 35px;
+        }
+
+
+        .mini-logo {
+            width: 75px;
+            height: 9px;
+
+            border-radius: 5px;
+
+            background: white;
+        }
+
+
+        .mini-menu {
+            display: flex;
+
+            gap: 7px;
+        }
+
+
+        .mini-menu span {
+            width: 31px;
+            height: 5px;
+
+            border-radius: 5px;
+
+            background: #333;
+        }
+
+
+        .mini-content {
+            display: grid;
+
+            grid-template-columns:
+                1.15fr .85fr;
+
+            gap: 22px;
+
+            align-items: center;
+        }
+
+
+        .mini-lines {
+            display: grid;
+
+            gap: 10px;
+        }
+
+
+        .mini-line {
+            height: 8px;
+
+            border-radius: 5px;
+
+            background: #303030;
+        }
+
+
+        .mini-line.big {
+            width: 92%;
+
+            height: 18px;
+
+            background: white;
+        }
+
+
+        .mini-line.accent {
+            width: 72%;
+
+            height: 12px;
+
+            background: var(--maroon-light);
+        }
+
+
+        .mini-line.short {
+            width: 68%;
+        }
+
+
+        .mini-button {
+            width: 92px;
+            height: 27px;
+
+            margin-top: 7px;
+
+            border-radius: 8px;
+
+            background: var(--maroon);
+        }
+
+
+        .mini-image {
+            aspect-ratio: 1;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #161d2a,
+                    #241017
+                );
+        }
+
+
+        .mini-image-card {
+            width: 58%;
+
+            aspect-ratio: .78;
+
+            border:
+                5px solid rgba(255,255,255,.08);
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #172033,
+                    #4b1729
+                );
+
+            box-shadow:
+                0 20px 35px rgba(0,0,0,.4);
+
+            transform: rotate(7deg);
+
+            animation:
+                imageTilt 4.5s ease-in-out infinite;
+        }
+
+
+        /* =====================================================
+           FLOATING CARDS
+        ====================================================== */
+
+        .floating-card {
+            position: absolute;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 10px 12px;
+
+            border:
+                1px solid rgba(255,255,255,.1);
+
+            border-radius: 12px;
+
+            background:
+                rgba(15,15,15,.88);
+
+            box-shadow:
+                0 18px 40px rgba(0,0,0,.4);
+
+            backdrop-filter: blur(14px);
+
+            color: white;
+
+            font-size: .7rem;
+
+            font-weight: 700;
+        }
+
+
+        .floating-icon {
+            width: 28px;
+            height: 28px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 8px;
+
+            color: var(--blue);
+
+            background:
+                var(--blue-soft);
+        }
+
+
+        .floating-icon svg {
+            width: 15px;
+            height: 15px;
+        }
+
+
+        .float-one {
+            top: 72px;
+            left: 0;
+
+            animation:
+                cardFloatOne 4.5s ease-in-out infinite;
+        }
+
+
+        .float-two {
+            right: -5px;
+            bottom: 76px;
+
+            animation:
+                cardFloatTwo 5s ease-in-out infinite;
+        }
+
+
+        .float-three {
+            left: 45px;
+            bottom: 15px;
+
+            animation:
+                cardFloatThree 5.5s ease-in-out infinite;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
+
+        main {
+            padding-bottom: 90px;
+        }
+
+
+        .section {
+            margin-bottom: 90px;
+        }
+
+
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+
+        .section-kicker {
+            color: var(--maroon-light);
+
+            text-transform: uppercase;
+
+            letter-spacing: .14em;
+
+            font-size: .68rem;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-heading h2 {
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(1.7rem, 3vw, 2.2rem);
+
+            line-height: 1.2;
+
+            letter-spacing: -.05em;
+
+            margin-bottom: 7px;
+        }
+
+
+        .section-heading p {
+            color: var(--muted);
+
+            font-size: .9rem;
+        }
+
+
+        /* =====================================================
+           CARDS
+        ====================================================== */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap: 18px;
+        }
+
+
+        .card {
+            position: relative;
+
+            min-width: 0;
+
+            padding: 26px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.045),
+                    rgba(255,255,255,.018)
+                );
+
+            border:
+                1px solid var(--line);
+
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.25);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+        }
+
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(255,255,255,.16);
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,.38);
+        }
+
+
+        .card-top {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .icon-box {
+            flex: 0 0 44px;
+
+            width: 44px;
+            height: 44px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 13px;
+
+            color: var(--blue);
+
+            background:
+                var(--blue-soft);
+
+            border:
+                1px solid rgba(79,140,255,.08);
+        }
+
+
+        .icon-box.maroon {
+            color: var(--maroon-light);
+
+            background:
+                var(--maroon-soft);
+        }
+
+
+        .icon-box svg {
+            width: 21px;
+            height: 21px;
+
+            stroke: currentColor;
+        }
+
+
+        .card-title {
+            min-width: 0;
+        }
+
+
+        .card h3 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 1.05rem;
+
+            line-height: 1.3;
+
+            letter-spacing: -.025em;
+
+            margin-bottom: 6px;
+        }
+
+
+        .badge {
+            display: inline-flex;
+
+            width: fit-content;
+
+            padding: 4px 9px;
+
+            border-radius: 999px;
+
+            color: var(--blue);
+
+            background:
+                var(--blue-soft);
+
+            font-size: .65rem;
+
+            line-height: 1.2;
+
+            font-weight: 700;
+        }
+
+
+        .badge.maroon {
+            color: var(--maroon-light);
+
+            background:
+                var(--maroon-soft);
+        }
+
+        .price {
+            margin: 2px 0 20px;
+            font-family: "Manrope", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -.035em;
+            color: var(--white);
+        }
+
+        .price.consultation {
+            color: var(--maroon-light);
+            font-size: 1.05rem;
+        }
+
+
+        .features {
+            list-style: none;
+
+            display: grid;
+
+            gap: 9px;
+
+            margin-bottom: 23px;
+        }
+
+
+        .features li {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            color: var(--muted-light);
+
+            font-size: .83rem;
+        }
+
+
+        .features li::before {
+            content: "✓";
+
+            color: var(--blue);
+
+            font-weight: 800;
+        }
+
+
+        .card-button {
+            width: 100%;
+
+            min-height: 43px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            color: white;
+
+            background: #1b1b1b;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            text-decoration: none;
+
+            font-size: .82rem;
+
+            font-weight: 700;
+
+            transition: .25s ease;
+        }
+
+
+        .card-button:hover {
+            background: var(--maroon);
+
+            border-color:
+                var(--maroon);
+        }
+
+
+        /* =====================================================
+           AI SPECIAL SECTION
+        ====================================================== */
+
+        #ai .card {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(181,43,82,.045),
+                    rgba(255,255,255,.018)
+                );
+        }
+
+
+        .ai-note {
+            margin-top: 15px;
+
+            padding: 12px 14px;
+
+            border-radius: 11px;
+
+            border:
+                1px solid rgba(181,43,82,.12);
+
+            background:
+                rgba(181,43,82,.05);
+
+            color: var(--muted-light);
+
+            font-size: .73rem;
+
+            line-height: 1.5;
+        }
+
+
+        .ai-note strong {
+            color: var(--maroon-light);
+        }
+
+
+        /* =====================================================
+           GUIDE
+        ====================================================== */
+
+        .guide-box {
+            padding: 34px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.04),
+                    rgba(255,255,255,.015)
+                );
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.3);
+        }
+
+
+        .guide-heading {
+            text-align: center;
+
+            max-width: 550px;
+
+            margin:
+                0 auto 27px;
+        }
+
+
+        .guide-heading h2 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 1.65rem;
+
+            letter-spacing: -.045em;
+
+            margin-bottom: 5px;
+        }
+
+
+        .guide-heading p {
+            color: var(--muted);
+
+            font-size: .84rem;
+        }
+
+
+        .guide-steps {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,minmax(0,1fr));
+
+            gap: 14px;
+        }
+
+
+        .step-item {
+            padding: 19px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,.025);
+        }
+
+
+        .step-number {
+            width: 31px;
+            height: 31px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 12px;
+
+            border-radius: 9px;
+
+            color: var(--maroon-light);
+
+            background:
+                var(--maroon-soft);
+
+            font-size: .72rem;
+
+            font-weight: 800;
+        }
+
+
+        .step-item h4 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: .9rem;
+
+            margin-bottom: 5px;
+        }
+
+
+        .step-item p {
+            color: var(--muted);
+
+            font-size: .77rem;
+
+            line-height: 1.55;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            border-top:
+                1px solid var(--line);
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: .77rem;
+
+            background:
+                #030303;
+        }
+
+
+        footer strong {
+            color: var(--maroon-light);
+        }
+
+
+        /* =====================================================
+           ANIMATIONS
+        ====================================================== */
+
+        @keyframes browserFloat {
+
+            0%,100% {
+                transform:
+                    perspective(1100px)
+                    rotateY(-6deg)
+                    rotateX(2deg)
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    perspective(1100px)
+                    rotateY(-3deg)
+                    rotateX(1deg)
+                    translateY(-11px);
+            }
+        }
+
+
+        @keyframes imageTilt {
+
+            0%,100% {
+                transform:
+                    rotate(7deg)
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    rotate(3deg)
+                    translateY(-5px);
+            }
+        }
+
+
+        @keyframes pulseGlow {
+
+            0%,100% {
+                transform: scale(.92);
+                opacity: .7;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes rotateOrbit {
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        @keyframes cardFloatOne {
+
+            0%,100% {
+                transform:
+                    translateY(0)
+                    rotate(-2deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-9px)
+                    rotate(1deg);
+            }
+        }
+
+
+        @keyframes cardFloatTwo {
+
+            0%,100% {
+                transform:
+                    translateY(0)
+                    rotate(2deg);
+            }
+
+            50% {
+                transform:
+                    translateY(8px)
+                    rotate(-1deg);
+            }
+        }
+
+
+        @keyframes cardFloatThree {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero-layout {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+                text-align: center;
+            }
+
+
+            .hero-copy {
+                text-align: center;
+            }
+
+
+            header p {
+                margin-inline: auto;
+            }
+
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+
+            .hero-visual {
+                min-height: 390px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE NAV
+        ====================================================== */
+
+        @media (max-width: 820px) {
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 68px;
+
+                left: 20px;
+                right: 20px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 3px;
+
+                padding: 10px;
+
+                background:
+                    rgba(10,10,10,.97);
+
+                border:
+                    1px solid var(--line);
+
+                border-radius: 14px;
+
+                box-shadow:
+                    0 25px 60px rgba(0,0,0,.5);
+            }
+
+
+            .nav-links.active {
+                display: flex;
+            }
+
+
+            .nav-links a {
+                padding: 11px 12px;
+
+                border-radius: 9px;
+            }
+
+
+            .nav-links a:hover {
+                background:
+                    rgba(255,255,255,.04);
+            }
+
+
+            .nav-cta {
+                text-align: center;
+
+                margin-top: 4px;
+            }
+
+
+            .menu-toggle {
+                display: grid;
+
+                place-items: center;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 640px) {
+
+            .container {
+                width:
+                    calc(100% - 28px);
+            }
+
+
+            nav {
+                height: 64px;
+            }
+
+
+            .nav-inner {
+                width:
+                    calc(100% - 28px);
+            }
+
+
+            header {
+
+                min-height: auto;
+
+                padding:
+                    110px 14px 60px;
+            }
+
+
+            header h1 {
+
+                font-size:
+                    clamp(
+                        2.9rem,
+                        15vw,
+                        4rem
+                    );
+            }
+
+
+            header p {
+                font-size: .9rem;
+            }
+
+
+            .hero-button {
+
+                width: 100%;
+
+                max-width: 280px;
+            }
+
+
+            .hero-actions {
+                margin-top: 23px;
+            }
+
+
+            .hero-visual {
+
+                min-height: 315px;
+
+                margin-top: 8px;
+            }
+
+
+            .hero-orbit {
+
+                width: 290px;
+                height: 290px;
+            }
+
+
+            .hero-glow {
+
+                width: 260px;
+                height: 260px;
+            }
+
+
+            .browser-card {
+
+                width:
+                    min(350px,88%);
+
+                border-radius: 16px;
+            }
+
+
+            .browser-body {
+
+                padding: 18px;
+            }
+
+
+            .floating-card {
+
+                padding:
+                    8px 10px;
+
+                font-size:
+                    .62rem;
+            }
+
+
+            .floating-icon {
+
+                width: 24px;
+                height: 24px;
+            }
+
+
+            .float-one {
+
+                top: 35px;
+                left: 2px;
+            }
+
+
+            .float-two {
+
+                right: 0;
+                bottom: 45px;
+            }
+
+
+            .float-three {
+
+                left: 15px;
+                bottom: 0;
+            }
+
+
+            main {
+                padding-bottom: 55px;
+            }
+
+
+            .section {
+                margin-bottom: 55px;
+            }
+
+
+            .grid,
+            .guide-steps {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .card {
+
+                padding: 20px;
+
+                border-radius: 16px;
+            }
+
+
+            .guide-box {
+
+                padding:
+                    22px 16px;
+
+                border-radius: 17px;
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 1.45rem;
+            }
+        }
+
+
+        /* =====================================================
+           REDUCE MOTION
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+
+                animation:
+                    none !important;
+
+                transition:
+                    none !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================== -->
+
+<nav>
+
+    <div class="nav-inner">
+
+        <a href="#" class="nav-brand">
+            LIN<span>-digital</span>
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            aria-label="Buka menu"
+            aria-expanded="false"
+            type="button">
+
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round">
+
+                <path d="M4 6h16"/>
+                <path d="M4 12h16"/>
+                <path d="M4 18h16"/>
+
+            </svg>
+
+        </button>
+
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#website">
+                Website
+            </a>
+
+            <a href="#desain">
+                Desain & Dokumen
+            </a>
+
+            <a href="#ai">
+                AI & Tools
+            </a>
+
+            <a href="#panduan">
+                Cara Order
+            </a>
+
+            <a
+                class="nav-cta"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20konsultasi.">
+
+                Konsultasi
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<header>
+
+    <div class="hero-layout">
+
+
+        <div class="hero-copy">
+
+           
+
+
+            <h1>
+
+                LIN-<span class="accent">digital</span>
+
+            </h1>
+
+
+            <p>
+
+                Website profesional, undangan digital,
+                hosting, AI tools, dan berbagai kebutuhan
+                digital dalam satu tempat.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    class="hero-button primary"
+                    href="#website">
+
+                    Lihat Layanan
+
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round">
+
+                        <path d="M5 12h14"/>
+                        <path d="m13 6 6 6-6 6"/>
+
+                    </svg>
+
+                </a>
+
+
+                <a
+                    class="hero-button secondary"
+                    href="#panduan">
+
+                    Cara Order
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO VISUAL -->
+
+        <div
+            class="hero-visual"
+            aria-label="Ilustrasi layanan digital LIN-digital">
+
+
+            <div class="hero-glow"></div>
+
+            <div class="hero-orbit"></div>
+
+
+            <!-- FLOATING WEBSITE -->
+
+            <div class="floating-card float-one">
+
+                <span class="floating-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+
+                        <path d="M4 5h16v14H4z"/>
+                        <path d="M8 9h8"/>
+                        <path d="M8 13h5"/>
+
+                    </svg>
+
+                </span>
+
+                Website
+
+            </div>
+
+
+            <!-- BROWSER -->
+
+            <div class="browser-card">
+
+                <div class="browser-top">
+
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+
+                    <span class="browser-address"></span>
+
+                </div>
+
+
+                <div class="browser-body">
+
+                    <div class="mini-nav">
+
+                        <span class="mini-logo"></span>
+
+                        <div class="mini-menu">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-content">
+
+                        <div class="mini-lines">
+
+                            <span class="mini-line big"></span>
+
+                            <span class="mini-line accent"></span>
+
+                            <span class="mini-line"></span>
+
+                            <span class="mini-line short"></span>
+
+                            <span class="mini-button"></span>
+
+                        </div>
+
+
+                        <div class="mini-image">
+
+                            <div class="mini-image-card"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI -->
+
+            <div class="floating-card float-two">
+
+                <span class="floating-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+
+                        <path d="M12 3 9.8 8.2 4 10l5.8 1.8L12 17l2.2-5.2L20 10l-5.8-1.8L12 3Z"/>
+
+                    </svg>
+
+                </span>
+
+                AI & Tools
+
+            </div>
+
+
+            <!-- SIMPLE -->
+
+            <div class="floating-card float-three">
+
+                <span class="floating-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+
+                        <path d="M20 6 9 17l-5-5"/>
+
+                    </svg>
+
+                </span>
+
+                Simple. Modern. Ready.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =========================================================
+     WEBSITE & UNDANGAN
+========================================================== -->
+
+<section
+    class="section"
+    id="website">
+
+    <div class="section-heading">
+        <div>
+            <div class="section-kicker">
+                Website & Digital
+            </div>
+            <h2>
+                Bangun kehadiran digital Anda.
+            </h2>
+            <p>
+                Dari website hingga undangan digital,
+                pilih layanan sesuai kebutuhan Anda.
+            </p>
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- LANDING PAGE -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M3 12h18"/>
+                            <path d="M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Landing Page</h3>
+                        <span class="badge">Mulai 1 halaman</span>
+                    </div>
+                </div>
+
+                <div class="price">Rp600.000</div>
+
+                <ul class="features">
+                    <li>1 halaman responsif</li>
+                    <li>Desain modern & profesional</li>
+                    <li>CTA WhatsApp</li>
+                    <li>Bisa include hosting & domain</li>
+                </ul>
+            </div>
+
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20pesan%20Landing%20Page%20Rp600.000.">
+                Pesan Landing Page
+            </a>
+        </article>
+
+        <!-- WEBSITE PROFESIONAL -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box maroon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 21V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v16"/>
+                            <path d="M16 9h3a1 1 0 0 1 1 1v11"/>
+                            <path d="M8 8h4"/>
+                            <path d="M8 12h4"/>
+                            <path d="M8 16h4"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Website Profesional</h3>
+                        <span class="badge maroon">Company / Business</span>
+                    </div>
+                </div>
+
+                <div class="price consultation">Konsultasi untuk harga</div>
+
+                <ul class="features">
+                    <li>Multi-halaman</li>
+                    <li>Company profile / toko online</li>
+                    <li>Katalog produk & fitur sesuai kebutuhan</li>
+                    <li>SEO-friendly & responsif</li>
+                    <li>Bisa integrasi AI, pembayaran, dan fitur lainnya</li>
+                </ul>
+            </div>
+
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20konsultasi%20Website%20Profesional.">
+                Konsultasi Website
+            </a>
+        </article>
+
+        <!-- HOSTING -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="6" rx="1"/>
+                            <rect x="3" y="14" width="18" height="6" rx="1"/>
+                            <path d="M7 7h.01"/>
+                            <path d="M7 17h.01"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Jasa Hosting</h3>
+                        <span class="badge">Website siap online</span>
+                    </div>
+                </div>
+
+                <div class="price consultation">Konsultasi</div>
+
+                <ul class="features">
+                    <li>Hosting website</li>
+                    <li>SSL / HTTPS</li>
+                    <li>Setup domain</li>
+                    <li>Bantuan deploy website</li>
+                </ul>
+            </div>
+
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20konsultasi%20jasa%20hosting.">
+                Tanya Hosting
+            </a>
+        </article>
+
+        <!-- UNDANGAN SIMPLE -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box maroon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="m3 7 9 6 9-6"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Undangan Digital Simple</h3>
+                        <span class="badge maroon">Wedding & Birthday</span>
+                    </div>
+                </div>
+
+                <div class="price">Rp5.000</div>
+
+                <ul class="features">
+                    <li>Sesuai template yang tersedia</li>
+                    <li>1 link undangan bisa dibagikan ke siapa saja</li>
+                    <li>Tidak menggunakan patokan nama penerima</li>
+                    <li>Bisa untuk undangan nikah atau ulang tahun</li>
+                    <li>Masa aktif / expired 5 hari</li>
+                </ul>
+
+                <div class="ai-note">
+                    <strong>Catatan:</strong> Paket simple tidak termasuk request desain khusus.
+                </div>
+            </div>
+
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20pesan%20Undangan%20Digital%20Simple%20Rp5.000.">
+                Pesan Undangan Simple
+            </a>
+        </article>
+
+        <!-- UNDANGAN PROFESIONAL -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3 14.8 8.2 20 11l-5.2 2.8L12 19l-2.8-5.2L4 11l5.2-2.8L12 3Z"/>
+                            <path d="M19 17v4"/>
+                            <path d="M17 19h4"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Undangan Digital Profesional</h3>
+                        <span class="badge">Lebih lengkap</span>
+                    </div>
+                </div>
+
+                <div class="price consultation">Konsultasi untuk harga</div>
+
+                <ul class="features">
+                    <li>Desain lebih lengkap & profesional</li>
+                    <li>Konten dan tampilan dapat disesuaikan</li>
+                    <li>Fitur undangan lebih lengkap</li>
+                    <li>Cocok untuk wedding & berbagai event</li>
+                    <li>Konsultasi kebutuhan sebelum pengerjaan</li>
+                </ul>
+            </div>
+
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20konsultasi%20Undangan%20Digital%20Profesional.">
+                Konsultasi Undangan
+            </a>
+        </article>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     DOKUMEN & DESAIN
+========================================================== -->
+
+<section class="section" id="desain">
+    <div class="section-heading">
+        <div>
+            <div class="section-kicker">Dokumen & Design</div>
+            <h2>Rapikan, desain, dan tampilkan ide Anda.</h2>
+            <p>Layanan cepat untuk kebutuhan tugas, bisnis, presentasi, dan branding.</p>
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <!-- PERAPIHAN DOKUMEN -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 3h9l3 3v15H6z"/>
+                            <path d="M15 3v4h4"/>
+                            <path d="M9 12h6"/>
+                            <path d="M9 16h6"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Perapihan Dokumen</h3>
+                        <span class="badge">Word / Dokumen</span>
+                    </div>
+                </div>
+                <div class="price">Mulai Rp35.000</div>
+                <ul class="features">
+                    <li>Rapikan format & layout</li>
+                    <li>Penyesuaian heading dan penomoran</li>
+                    <li>Daftar isi, tabel, dan halaman</li>
+                    <li>Cocok untuk tugas, laporan, proposal, dan dokumen kerja</li>
+                </ul>
+            </div>
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20jasa%20perapihan%20dokumen%20mulai%20Rp35.000.">
+                Pesan Perapihan Dokumen
+            </a>
+        </article>
+
+        <!-- PPT -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box maroon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                            <path d="M8 8h10"/>
+                            <path d="M8 12h6"/>
+                            <path d="M8 16h4"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Pembuatan PPT</h3>
+                        <span class="badge maroon">Presentasi</span>
+                    </div>
+                </div>
+                <div class="price">Mulai Rp35.000</div>
+                <ul class="features">
+                    <li>Desain slide rapi & profesional</li>
+                    <li>Struktur materi lebih mudah dipahami</li>
+                    <li>Visual yang disesuaikan dengan kebutuhan</li>
+                    <li>Cocok untuk tugas, presentasi, bisnis, dan proposal</li>
+                </ul>
+            </div>
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20jasa%20pembuatan%20PPT%20mulai%20Rp35.000.">
+                Pesan Pembuatan PPT
+            </a>
+        </article>
+
+        <!-- LOGO -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="8"/>
+                            <path d="M9 15c2-1 4-1 6 0"/>
+                            <path d="M9 9h.01"/>
+                            <path d="M15 9h.01"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Desain Logo</h3>
+                        <span class="badge">Branding</span>
+                    </div>
+                </div>
+                <div class="price">Mulai Rp35.000</div>
+                <ul class="features">
+                    <li>Logo sesuai kebutuhan brand</li>
+                    <li>Konsep sederhana & modern</li>
+                    <li>File siap digunakan untuk kebutuhan digital</li>
+                    <li>Cocok untuk bisnis, UMKM, komunitas, dan personal brand</li>
+                </ul>
+            </div>
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20jasa%20desain%20logo%20mulai%20Rp35.000.">
+                Pesan Desain Logo
+            </a>
+        </article>
+
+        <!-- BANNER -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box maroon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="M7 15 10 12l2 2 3-4 3 5"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Desain Banner</h3>
+                        <span class="badge maroon">Digital</span>
+                    </div>
+                </div>
+                <div class="price">Mulai Rp45.000</div>
+                <ul class="features">
+                    <li>Desain banner untuk kebutuhan digital</li>
+                    <li>Layout informatif & menarik</li>
+                    <li>Ukuran disesuaikan dengan kebutuhan</li>
+                    <li>Cocok untuk promosi, event, dan media sosial</li>
+                </ul>
+            </div>
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20jasa%20desain%20banner%20mulai%20Rp45.000.">
+                Pesan Desain Banner
+            </a>
+        </article>
+
+        <!-- SPANDUK -->
+        <article class="card">
+            <div>
+                <div class="card-top">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 7h16v10H4z"/>
+                            <path d="M8 7v10"/>
+                            <path d="M16 7v10"/>
+                            <path d="M4 10h16"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h3>Desain Spanduk</h3>
+                        <span class="badge">Cetak / Promosi</span>
+                    </div>
+                </div>
+                <div class="price">Mulai Rp45.000</div>
+                <ul class="features">
+                    <li>Desain spanduk siap cetak</li>
+                    <li>Ukuran dapat disesuaikan</li>
+                    <li>Layout jelas dan mudah dibaca</li>
+                    <li>Cocok untuk usaha, acara, promo, dan informasi umum</li>
+                </ul>
+            </div>
+            <a class="card-button" target="_blank" rel="noopener"
+               href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20jasa%20desain%20spanduk%20mulai%20Rp45.000.">
+                Pesan Desain Spanduk
+            </a>
+        </article>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     AI TOOLS
+========================================================== -->
+
+<section
+    class="section"
+    id="ai">
+
+    <div class="section-heading">
+
+        <div>
+
+            <div class="section-kicker">
+                AI & Tools
+            </div>
+
+            <h2>
+                Tools premium sesuai kebutuhan.
+            </h2>
+
+            <p>
+                Tersedia pilihan durasi harian maupun bulanan.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="grid">
+
+
+        <!-- CHATGPT -->
+
+        <article class="card">
+
+            <div>
+
+                <div class="card-top">
+
+                    <div class="icon-box">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="1.8">
+
+                            <path d="M12 3 9.8 8.2 4 10l5.8 1.8L12 17l2.2-5.2L20 10l-5.8-1.8L12 3Z"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="card-title">
+
+                        <h3>
+                            ChatGPT Plus / Pro
+                        </h3>
+
+                        <span class="badge">
+                            AI Premium
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        Fitur AI premium
+                    </li>
+
+                    <li>
+                        Cocok untuk kerja & belajar
+                    </li>
+
+                    <li>
+                        Pilihan harian
+                    </li>
+
+                    <li>
+                        Pilihan bulanan
+                    </li>
+
+                </ul>
+
+
+                <div class="ai-note">
+
+                    <strong>Paket fleksibel:</strong>
+                    tersedia opsi harian atau bulanan,
+                    sesuai kebutuhan.
+
+                </div>
+
+            </div>
+
+
+            <a
+                class="card-button"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20tanya%20paket%20ChatGPT.">
+
+                Tanya Paket
+
+            </a>
+
+        </article>
+
+
+
+        <!-- GEMINI -->
+
+        <article class="card">
+
+            <div>
+
+                <div class="card-top">
+
+                    <div class="icon-box maroon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="1.8">
+
+                            <path d="M12 3 9.8 8.2 4 10l5.8 1.8L12 17l2.2-5.2L20 10l-5.8-1.8L12 3Z"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="card-title">
+
+                        <h3>
+                            Gemini Advanced / Pro
+                        </h3>
+
+                        <span class="badge maroon">
+                            Google AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        AI dari ekosistem Google
+                    </li>
+
+                    <li>
+                        Cocok untuk produktivitas
+                    </li>
+
+                    <li>
+                        Paket harian
+                    </li>
+
+                    <li>
+                        Paket bulanan
+                    </li>
+
+                </ul>
+
+
+                <div class="ai-note">
+
+                    <strong>Pilihan durasi:</strong>
+                    harian atau bulanan sesuai kebutuhan.
+
+                </div>
+
+            </div>
+
+
+            <a
+                class="card-button"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20tanya%20paket%20Gemini.">
+
+                Tanya Paket
+
+            </a>
+
+        </article>
+
+
+
+        <!-- CLAUDE -->
+
+        <article class="card">
+
+            <div>
+
+                <div class="card-top">
+
+                    <div class="icon-box">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="1.8">
+
+                            <path d="M5 5h14v14H5z"/>
+
+                            <path d="M8 9h8"/>
+                            <path d="M8 13h5"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="card-title">
+
+                        <h3>
+                            Claude Pro
+                        </h3>
+
+                        <span class="badge">
+                            AI Productivity
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        AI untuk menulis & analisis
+                    </li>
+
+                    <li>
+                        Membantu pekerjaan kompleks
+                    </li>
+
+                    <li>
+                        Paket harian
+                    </li>
+
+                    <li>
+                        Paket bulanan
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <a
+                class="card-button"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20tanya%20paket%20Claude.">
+
+                Tanya Paket
+
+            </a>
+
+        </article>
+
+
+
+        <!-- CURSOR -->
+
+        <article class="card">
+
+            <div>
+
+                <div class="card-top">
+
+                    <div class="icon-box maroon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="1.8">
+
+                            <path d="m8 9-4 3 4 3"/>
+                            <path d="m16 9 4 3-4 3"/>
+                            <path d="m14 5-4 14"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="card-title">
+
+                        <h3>
+                            Cursor
+                        </h3>
+
+                        <span class="badge maroon">
+                            AI Coding
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        AI coding assistant
+                    </li>
+
+                    <li>
+                        Membantu developer
+                    </li>
+
+                    <li>
+                        Pilihan harian
+                    </li>
+
+                    <li>
+                        Pilihan bulanan
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <a
+                class="card-button"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20tanya%20paket%20Cursor.">
+
+                Tanya Paket
+
+            </a>
+
+        </article>
+
+
+
+        <!-- COMMANDCODE -->
+
+        <article class="card">
+
+            <div>
+
+                <div class="card-top">
+
+                    <div class="icon-box">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="1.8">
+
+                            <path d="m8 9-4 3 4 3"/>
+                            <path d="m16 9 4 3-4 3"/>
+                            <path d="m14 5-4 14"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="card-title">
+
+                        <h3>
+                            CommandCode AI
+                        </h3>
+
+                        <span class="badge">
+                            Developer Tools
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        AI untuk kebutuhan coding
+                    </li>
+
+                    <li>
+                        Membantu generate & review code
+                    </li>
+
+                    <li>
+                        Cocok untuk developer
+                    </li>
+
+                    <li>
+                        Paket harian / bulanan
+                    </li>
+
+                </ul>
+
+
+                <div class="ai-note">
+
+                    <strong>Fleksibel:</strong>
+                    pilih durasi sesuai kebutuhan
+                    tanpa harus langsung berlangganan panjang.
+
+                </div>
+
+            </div>
+
+
+            <a
+                class="card-button"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20tanya%20paket%20CommandCode%20AI.">
+
+                Tanya Paket
+
+            </a>
+
+        </article>
+
+
+
+        <!-- PAYMENT -->
+
+        <article class="card">
+
+            <div>
+
+                <div class="card-top">
+
+                    <div class="icon-box maroon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="1.8">
+
+                            <rect
+                                x="3"
+                                y="5"
+                                width="18"
+                                height="14"
+                                rx="2"/>
+
+                            <path d="M3 10h18"/>
+                            <path d="M7 15h3"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="card-title">
+
+                        <h3>
+                            Pembayaran Digital
+                        </h3>
+
+                        <span class="badge maroon">
+                            Konsultasi
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        Bantuan pembayaran software
+                    </li>
+
+                    <li>
+                        Domain & layanan digital
+                    </li>
+
+                    <li>
+                        Proses transparan
+                    </li>
+
+                    <li>
+                        Konsultasi kebutuhan transaksi
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <a
+                class="card-button"
+                target="_blank"
+                rel="noopener"
+                href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20konsultasi%20pembayaran%20digital.">
+
+                Konsultasi
+
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ORDER GUIDE
+========================================================== -->
+
+<section
+    class="section"
+    id="panduan">
+
+    <div class="guide-box">
+
+        <div class="guide-heading">
+
+            <div class="section-kicker">
+                Simple Process
+            </div>
+
+            <h2>
+                Order dalam 3 langkah.
+            </h2>
+
+            <p>
+                Diskusi → Deal & DP → Diproses.
+            </p>
+
+        </div>
+
+
+        <div class="guide-steps">
+
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h4>
+                    Diskusi
+                </h4>
+
+                <p>
+                    Ceritakan kebutuhan website,
+                    undangan, hosting, atau AI tools Anda.
+                </p>
+
+            </div>
+
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h4>
+                    Deal & DP
+                </h4>
+
+                <p>
+                    Tentukan layanan, harga, durasi, dan detail kebutuhan.
+                    Setelah deal, lakukan pembayaran DP.
+                </p>
+
+            </div>
+
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h4>
+                    Diproses
+                </h4>
+
+                <p>
+                    Setelah DP dikonfirmasi,
+                    pesanan mulai diproses sesuai kesepakatan.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer>
+
+    &copy; 2026
+
+    <strong>
+        LIN-digital
+    </strong>
+
+    · Solusi digital yang simpel & profesional.
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script>
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const navLinks =
+        document.querySelector("#navLinks");
+
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            navLinks.classList.toggle("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    navLinks
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+</script>
+
+
+</body>
+</html>
