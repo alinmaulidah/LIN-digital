@@ -1346,14 +1346,6 @@
            SERVICE CARDS
         ====================================================== */
 
-        .grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, minmax(0,1fr));
-
-            gap: 20px;
-        }
-
         .card {
             position: relative;
 
@@ -1536,16 +1528,6 @@
             line-height: 1.3;
 
             font-weight: 700;
-        }
-
-        .card p.desc {
-            color: var(--muted);
-
-            font-size: .84rem;
-
-            line-height: 1.7;
-
-            margin-bottom: 18px;
         }
 
         .features {
@@ -2433,10 +2415,6 @@
 
         @media (max-width: 1040px) {
 
-            .grid {
-                grid-template-columns: repeat(2, minmax(0,1fr));
-            }
-
             .why-grid,
             .guide-steps {
                 grid-template-columns: repeat(2, minmax(0,1fr));
@@ -2654,7 +2632,6 @@
                 margin-bottom: 28px;
             }
 
-            .grid,
             .why-grid,
             .guide-steps {
                 grid-template-columns: 1fr;
@@ -2855,11 +2832,11 @@
     <div class="container hero-layout">
 
 
-        <div class="hero-copy">
+        <div>
 
             <span class="eyebrow">
                 <span class="eyebrow-dot"></span>
-                5 Kategori Layanan · 12 Pilihan Paket
+                5 Kategori Layanan · 13 Pilihan Paket
             </span>
 
 
@@ -2935,7 +2912,7 @@
                 </div>
 
                 <div class="stat">
-                    <strong data-count="12">0</strong>
+                    <strong data-count="13">0</strong>
                     <span>Pilihan Paket</span>
                 </div>
 
@@ -3523,7 +3500,7 @@
 
 
             <!-- ANIMASI 2D -->
-            <article class="card price-card reveal">
+            <article class="card price-card span-2 reveal">
 
                 <div>
 
@@ -3817,6 +3794,55 @@
 
             </article>
 
+
+            <!-- NOTIFIKASI PEMBAYARAN -->
+            <article class="card price-card span-2 reveal">
+
+                <div>
+
+                    <div class="card-top">
+
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.5 3.5 2.5 10.5l7 2.5 2.5 7z"/>
+                                <path d="m9.5 13 4.5-4.5"/>
+                            </svg>
+                        </div>
+
+                        <div class="card-title">
+                            <h3>Integrasi Notifikasi Pembayaran</h3>
+                            <span class="badge">Teknis · QRIS &amp; Telegram</span>
+                        </div>
+
+                    </div>
+
+                    <div class="price-block">
+                        <span class="price-value">Konsultasi</span>
+                    </div>
+
+                    <span class="includes-label">Apa yang didapat</span>
+
+                    <ul class="features">
+                        <li>Notifikasi pembayaran (QRIS/barcode) otomatis masuk ke Telegram</li>
+                        <li>Setup bot Telegram &amp; penghubungan ke sistem pembayaran</li>
+                        <li>Isi notifikasi: nominal, waktu, dan status transaksi</li>
+                        <li>Bisa dikembangkan untuk rekap transaksi harian</li>
+                        <li>Cocok untuk toko online, kasir, dan usaha kecil</li>
+                    </ul>
+
+                </div>
+
+                <a class="card-button" target="_blank" rel="noopener"
+                   href="https://wa.me/6282295307299?text=Halo%20LIN-digital,%20saya%20ingin%20konsultasi%20Integrasi%20Notifikasi%20Pembayaran%20ke%20Telegram.">
+
+                    Konsultasi Integrasi
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+
+                </a>
+
+            </article>
+
         </div>
 
     </div>
@@ -3875,12 +3901,6 @@
                         <li>Bisa untuk pembelian domain, hosting, software, dan langganan aplikasi global</li>
                         <li>Transparan dan dikonfirmasi bertahap</li>
                     </ul>
-
-                    <div class="note-box">
-                        <strong>Bonus sistem kami:</strong> notifikasi instan via Telegram
-                        yang memastikan dana klien langsung terverifikasi —
-                        tanpa drama menunggu lama.
-                    </div>
 
                 </div>
 
